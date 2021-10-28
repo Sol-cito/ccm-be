@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql # container's name
+    ports:
+      - 3307:3306 # outer port : inner port (port forwarding)
+    environment:
+      MYSQL_ROOT_PASSWORD: 'myPassword123'
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+  flyway:
+    image: flyway/flyway:8.0.2
+    command: -url=jdbc:mysql://db -schemas=myschema -user=root -password=myPassword123 migrate
+    volumes:
+      - .:/flyway/sql
+    depends_on:
+      - db
