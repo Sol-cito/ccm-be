@@ -29,7 +29,7 @@ for i in range(1, len(countryCodeRows)):
           + "'" + eachItem[2].text \
           + "', " \
           + "" + eachItem[3].text \
-          + " );"
+          + " ); \n"
     newFile.write(row)
 
 print("----- END -----")
