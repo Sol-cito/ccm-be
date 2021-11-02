@@ -1,0 +1,10 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3307,
+  "username": "root",
+  "password": "myPassword123",
+  "database": "ccm",
+  "entities": ["../**/*.entity.{js, ts}"],
+  "synchronize": true
+}

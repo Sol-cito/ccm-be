@@ -11,10 +11,3 @@ services:
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
-  flyway:
-    image: flyway/flyway:8.0.2
-    command: -url=jdbc:mysql://db -schemas=myschema -user=root -password=myPassword123 migrate
-    volumes:
-      - .:/flyway/sql
-    depends_on:
-      - db
