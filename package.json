@@ -9,7 +9,7 @@
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "npm run migrate && nest start",
+    "start": "npm run makeFlywayByPython && npm run migrate && nest start",
     "start:ts": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -20,7 +20,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "migrate": "flyway -c src/flyway/flywayconfig.js migrate"
+    "migrate": "flyway -c src/flyway/flywayconfig.js migrate",
+    "makeFlywayByPython": "python ./python/CountryCodeCrawler.py"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
