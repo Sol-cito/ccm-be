@@ -1,4 +1,5 @@
 from json.tool import main
+from operator import le
 import requests
 import os
 from bs4 import BeautifulSoup
@@ -30,9 +31,13 @@ def startCrawlingAndMakeFile(flyway_fileName):
     newFile = open(path_dir + flyway_fileName, 'w', encoding='UTF-8')
 
     countryCodeRows = BeautifulSoup(htmlResponse, 'html.parser').find_all('tr')
+    startLine = "INSERT INTO country_code (country_name, alpha2_code, alpha3_code, numeric_code) VALUES \n"
     for i in range(1, len(countryCodeRows)):
         eachItem = countryCodeRows[i].find_all('td')
-        row = "INSERT INTO country_code (country_name, alpha2_code, alpha3_code, numeric_code) VALUES (" \
+        row = ""
+        if (i - 1) % 50 == 0:
+            row += startLine
+        row += "(" \
             + "'" + handleSpecialCharacter(eachItem[0].text) \
             + "', " \
             + "'" + eachItem[1].text \
@@ -40,7 +45,11 @@ def startCrawlingAndMakeFile(flyway_fileName):
             + "'" + eachItem[2].text \
             + "', " \
             + "" + eachItem[3].text \
-            + " ); \n"
+            + " ) \n"
+        if i % 50 == 0 or i == len(countryCodeRows) - 1:
+            row += "; \n"
+        elif i % 50 != 0:
+            row += ", \n"
         newFile.write(row)
 
     print("----- END -----")
