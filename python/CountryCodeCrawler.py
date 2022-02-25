@@ -1,26 +1,12 @@
 from json.tool import main
 from operator import le
 import requests
-import os
+import Common
 from bs4 import BeautifulSoup
 
 path_dir = './src/flyway/sql/'
 flyway_fileName = 'V1_101__insert_into_country_code_table.sql'
 URL = 'https://www.iban.com/country-codes'
-
-
-def handleSpecialCharacter(input):
-    output = ""
-    for i in range(len(input)):
-        if input[i] == "'":
-            continue
-        output += input[i]
-    return output
-
-
-def checkIfFileExists(fileName):
-    file_list = os.listdir(path_dir)
-    return fileName in file_list
 
 
 def startCrawlingAndMakeFile(flyway_fileName):
@@ -38,7 +24,7 @@ def startCrawlingAndMakeFile(flyway_fileName):
         if (i - 1) % 50 == 0:
             row += startLine
         row += "(" \
-            + "'" + handleSpecialCharacter(eachItem[0].text) \
+            + "'" + Common.handleSpecialCharacter(eachItem[0].text) \
             + "', " \
             + "'" + eachItem[1].text \
             + "', " \
@@ -56,5 +42,5 @@ def startCrawlingAndMakeFile(flyway_fileName):
 
 
 if __name__ == '__main__':
-    if not checkIfFileExists(flyway_fileName):
+    if not Common.checkIfFileExists(flyway_fileName):
         startCrawlingAndMakeFile(flyway_fileName)
