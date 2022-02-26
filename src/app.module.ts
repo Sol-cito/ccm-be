@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
-import { CountryCodeModule } from './services/countryCode.module';
+import { CountryInfoModule } from './services/countryInfo.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), CountryCodeModule],
+  imports: [TypeOrmModule.forRoot(), CountryInfoModule],
   controllers: [],
   providers: [],
 })

@@ -21,7 +21,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "migrate": "flyway -c src/flyway/flywayconfig.js migrate",
-    "makeFlywayByPython": "python ./python/CountryCodeCrawler.py"
+    "makeFlywayByPython": "python ./python/CountryCodeCrawler.py && python ./python/CountryTemperatureRequest.py"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
