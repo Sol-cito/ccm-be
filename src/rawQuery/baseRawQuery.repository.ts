@@ -1,30 +1,25 @@
-import { createConnection } from 'typeorm';
+import { getConnection } from 'typeorm';
 
 export class BaseRawQueryRepository {
   protected async executeQuery(rawQuery: string): Promise<any> {
-    let connection;
+    const conn = getConnection();
+    const queryRunner = conn.createQueryRunner();
+    await queryRunner.connect();
+    await queryRunner.startTransaction();
+    let result;
     try {
-      connection = await createConnection({
-        name: 'temp',
-        type: 'mysql',
-        host: 'localhost',
-        port: 3307,
-        username: 'root',
-        password: 'myPassword123',
-        database: 'ccm',
-      });
-      const result = await connection.query(rawQuery);
-      await connection.commit();
+      result = await queryRunner.query(rawQuery);
+      await queryRunner.commitTransaction();
       return result;
     } catch (error) {
-      if (connection) {
-        await connection.rollback();
+      if (queryRunner) {
+        await queryRunner.rollbackTransaction();
       }
       // TO-DO 공통 에러처리
       console.log(error);
     } finally {
-      if (connection) {
-        await connection.close();
+      if (queryRunner) {
+        await queryRunner.release();
       }
     }
   }
