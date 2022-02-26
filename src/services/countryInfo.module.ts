@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CountryInfoRawQueryRepository } from 'src/rawQuery/countryInfoRawQuery.repository';
 import { CountryCodeRepository } from 'src/repositories/countryCode.repository';
-import { CountryInfoRawQueryRepository } from 'src/repositories/countryInfoRawQuery.repository';
 import { CountryInfoController } from './countryInfo.controller';
 import { CountryInfoService } from './countryInfo.service';
 

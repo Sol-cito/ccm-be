@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CountryCode } from 'src/entities/countryCode.entity';
+import { CountryInfoRawQueryRepository } from 'src/rawQuery/countryInfoRawQuery.repository';
 import { CountryCodeRepository } from 'src/repositories/countryCode.repository';
-import { CountryInfoRawQueryRepository } from 'src/repositories/countryInfoRawQuery.repository';
 import { Repository } from 'typeorm';
 
 @Injectable()
