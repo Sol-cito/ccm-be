@@ -1,7 +1,12 @@
+import { Logger } from '@nestjs/common';
 import { getConnection } from 'typeorm';
 
 export class BaseRawQueryRepository {
+  protected readonly logger = new Logger(BaseRawQueryRepository.name);
+
   protected async executeQuery(rawQuery: string): Promise<any> {
+    this.logger.log('Execute executeQuery()');
+
     const conn = getConnection();
     const queryRunner = conn.createQueryRunner();
     await queryRunner.connect();
@@ -16,7 +21,7 @@ export class BaseRawQueryRepository {
         await queryRunner.rollbackTransaction();
       }
       // TO-DO 공통 에러처리
-      console.log(error);
+      this.logger.error('ExecuteQuery error', error);
     } finally {
       if (queryRunner) {
         await queryRunner.release();

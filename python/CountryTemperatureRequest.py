@@ -48,37 +48,37 @@ def sendRequestAndMakeFile():
             continue
         if i % 50 == 0:
             row += startLine
-        row += "( '" + ALPHA3CODE_LIST[i] + "', " + res.get("1901") + ", " + res.get("1902") + ", " + res.get(
-            "1903") + ", " + res.get("1904") + ", " + res.get("1905") + ", " + res.get("1906") + ", " + res.get(
-            "1907") + ", " + res.get("1908") + ", " + res.get("1909") + ", " + res.get("1910") + ", " + res.get(
-            "1911") + ", " + res.get("1912") + ", " + res.get("1913") + ", " + res.get("1914") + ", " + res.get(
-            "1915") + ", " + res.get("1916") + ", " + res.get("1917") + ", " + res.get("1918") + ", " + res.get(
-            "1919") + ", " + res.get("1920") + ", " + res.get("1921") + ", " + res.get("1922") + ", " + res.get(
-            "1923") + ", " + res.get("1924") + ", " + res.get("1925") + ", " + res.get("1926") + ", " + res.get(
-            "1927") + ", " + res.get("1928") + ", " + res.get("1929") + ", " + res.get("1930") + ", " + res.get(
-            "1931") + ", " + res.get("1932") + ", " + res.get("1933") + ", " + res.get("1934") + ", " + res.get(
-            "1935") + ", " + res.get("1936") + ", " + res.get("1937") + ", " + res.get("1938") + ", " + res.get(
-            "1939") + ", " + res.get("1940") + ", " + res.get("1941") + ", " + res.get("1942") + ", " + res.get(
-            "1943") + ", " + res.get("1944") + ", " + res.get("1945") + ", " + res.get("1946") + ", " + res.get(
-            "1947") + ", " + res.get("1948") + ", " + res.get("1949") + ", " + res.get("1950") + ", " + res.get(
-            "1951") + ", " + res.get("1952") + ", " + res.get("1953") + ", " + res.get("1954") + ", " + res.get(
-            "1955") + ", " + res.get("1956") + ", " + res.get("1957") + ", " + res.get("1958") + ", " + res.get(
-            "1959") + ", " + res.get("1960") + ", " + res.get("1961") + ", " + res.get("1962") + ", " + res.get(
-            "1963") + ", " + res.get("1964") + ", " + res.get("1965") + ", " + res.get("1966") + ", " + res.get(
-            "1967") + ", " + res.get("1968") + ", " + res.get("1969") + ", " + res.get("1970") + ", " + res.get(
-            "1971") + ", " + res.get("1972") + ", " + res.get("1973") + ", " + res.get("1974") + ", " + res.get(
-            "1975") + ", " + res.get("1976") + ", " + res.get("1977") + ", " + res.get("1978") + ", " + res.get(
-            "1979") + ", " + res.get("1980") + ", " + res.get("1981") + ", " + res.get("1982") + ", " + res.get(
-            "1983") + ", " + res.get("1984") + ", " + res.get("1985") + ", " + res.get("1986") + ", " + res.get(
-            "1987") + ", " + res.get("1988") + ", " + res.get("1989") + ", " + res.get("1990") + ", " + res.get(
-            "1991") + ", " + res.get("1992") + ", " + res.get("1993") + ", " + res.get("1994") + ", " + res.get(
-            "1995") + ", " + res.get("1996") + ", " + res.get("1997") + ", " + res.get("1998") + ", " + res.get(
-            "1999") + ", " + res.get("2000") + ", " + res.get("2001") + ", " + res.get("2002") + ", " + res.get(
-            "2003") + ", " + res.get("2004") + ", " + res.get("2005") + ", " + res.get("2006") + ", " + res.get(
-            "2007") + ", " + res.get("2008") + ", " + res.get("2009") + ", " + res.get("2010") + ", " + res.get(
-            "2011") + ", " + res.get("2012") + ", " + res.get("2013") + ", " + res.get("2014") + ", " + res.get(
-            "2015") + ", " + res.get("2016") + ", " + res.get("2017") + ", " + res.get("2018") + ", " + res.get(
-            "2019") + ", " + res.get("2020") + ")"
+        row += "( '" + ALPHA3CODE_LIST[i] + "', " + res.get("year_1901") + ", " + res.get("year_1902") + ", " + res.get(
+            "year_1903") + ", " + res.get("year_1904") + ", " + res.get("year_1905") + ", " + res.get("year_1906") + ", " + res.get(
+            "year_1907") + ", " + res.get("year_1908") + ", " + res.get("year_1909") + ", " + res.get("year_1910") + ", " + res.get(
+            "year_1911") + ", " + res.get("year_1912") + ", " + res.get("year_1913") + ", " + res.get("year_1914") + ", " + res.get(
+            "year_1915") + ", " + res.get("year_1916") + ", " + res.get("year_1917") + ", " + res.get("year_1918") + ", " + res.get(
+            "year_1919") + ", " + res.get("year_1920") + ", " + res.get("year_1921") + ", " + res.get("year_1922") + ", " + res.get(
+            "year_1923") + ", " + res.get("year_1924") + ", " + res.get("year_1925") + ", " + res.get("year_1926") + ", " + res.get(
+            "year_1927") + ", " + res.get("year_1928") + ", " + res.get("year_1929") + ", " + res.get("year_1930") + ", " + res.get(
+            "year_1931") + ", " + res.get("year_1932") + ", " + res.get("year_1933") + ", " + res.get("year_1934") + ", " + res.get(
+            "year_1935") + ", " + res.get("year_1936") + ", " + res.get("year_1937") + ", " + res.get("year_1938") + ", " + res.get(
+            "year_1939") + ", " + res.get("year_1940") + ", " + res.get("year_1941") + ", " + res.get("year_1942") + ", " + res.get(
+            "year_1943") + ", " + res.get("year_1944") + ", " + res.get("year_1945") + ", " + res.get("year_1946") + ", " + res.get(
+            "year_1947") + ", " + res.get("year_1948") + ", " + res.get("year_1949") + ", " + res.get("year_1950") + ", " + res.get(
+            "year_1951") + ", " + res.get("year_1952") + ", " + res.get("year_1953") + ", " + res.get("year_1954") + ", " + res.get(
+            "year_1955") + ", " + res.get("year_1956") + ", " + res.get("year_1957") + ", " + res.get("year_1958") + ", " + res.get(
+            "year_1959") + ", " + res.get("year_1960") + ", " + res.get("year_1961") + ", " + res.get("year_1962") + ", " + res.get(
+            "year_1963") + ", " + res.get("year_1964") + ", " + res.get("year_1965") + ", " + res.get("year_1966") + ", " + res.get(
+            "year_1967") + ", " + res.get("year_1968") + ", " + res.get("year_1969") + ", " + res.get("year_1970") + ", " + res.get(
+            "year_1971") + ", " + res.get("year_1972") + ", " + res.get("year_1973") + ", " + res.get("year_1974") + ", " + res.get(
+            "year_1975") + ", " + res.get("year_1976") + ", " + res.get("year_1977") + ", " + res.get("year_1978") + ", " + res.get(
+            "year_1979") + ", " + res.get("year_1980") + ", " + res.get("year_1981") + ", " + res.get("year_1982") + ", " + res.get(
+            "year_1983") + ", " + res.get("year_1984") + ", " + res.get("year_1985") + ", " + res.get("year_1986") + ", " + res.get(
+            "year_1987") + ", " + res.get("year_1988") + ", " + res.get("year_1989") + ", " + res.get("year_1990") + ", " + res.get(
+            "year_1991") + ", " + res.get("year_1992") + ", " + res.get("year_1993") + ", " + res.get("year_1994") + ", " + res.get(
+            "year_1995") + ", " + res.get("year_1996") + ", " + res.get("year_1997") + ", " + res.get("year_1998") + ", " + res.get(
+            "year_1999") + ", " + res.get("year_2000") + ", " + res.get("year_2001") + ", " + res.get("year_2002") + ", " + res.get(
+            "year_2003") + ", " + res.get("year_2004") + ", " + res.get("year_2005") + ", " + res.get("year_2006") + ", " + res.get(
+            "year_2007") + ", " + res.get("year_2008") + ", " + res.get("year_2009") + ", " + res.get("year_2010") + ", " + res.get(
+            "year_2011") + ", " + res.get("year_2012") + ", " + res.get("year_2013") + ", " + res.get("year_2014") + ", " + res.get(
+            "year_2015") + ", " + res.get("year_2016") + ", " + res.get("year_2017") + ", " + res.get("year_2018") + ", " + res.get(
+            "year_2019") + ", " + res.get("year_2020") + ")"
 
         if (i + 1) % 50 == 0 or i == len(ALPHA3CODE_LIST) - 1:
             row += "; \n"
