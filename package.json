@@ -31,6 +31,7 @@
     "flyway": "^0.1.9",
     "mysql2": "^2.3.2",
     "node-flywaydb": "^3.0.7",
+    "pm2": "^5.2.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
